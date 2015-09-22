@@ -14,12 +14,13 @@ namespace FootbalTableGenerator.Core.Tests
         public void WorldCup2014GroupA()
         {
             Table table = new Table(new TeamResultsSummaryComparator());
-            table.RegisterMatch(new MatchResultsBuilder().ConstructMatch("Brasil - Croatia 3:1"));
-            table.RegisterMatch(new MatchResultsBuilder().ConstructMatch("Mexico - Cameroon 1:0"));
-            table.RegisterMatch(new MatchResultsBuilder().ConstructMatch("Brasil - Mexico 0:0"));
-            table.RegisterMatch(new MatchResultsBuilder().ConstructMatch("Croatia - Cameroon 4:0"));
-            table.RegisterMatch(new MatchResultsBuilder().ConstructMatch("Brasil - Cameroon 4:1"));
-            table.RegisterMatch(new MatchResultsBuilder().ConstructMatch("Mexico - Croatia 3:1"));
+            MatchResultsBuilder mrb = new MatchResultsBuilder();
+            table.RegisterMatch(mrb.ConstructMatch("Brasil - Croatia 3:1"));
+            table.RegisterMatch(mrb.ConstructMatch("Mexico - Cameroon 1:0"));
+            table.RegisterMatch(mrb.ConstructMatch("Brasil - Mexico 0:0"));
+            table.RegisterMatch(mrb.ConstructMatch("Croatia - Cameroon 4:0"));
+            table.RegisterMatch(mrb.ConstructMatch("Brasil - Cameroon 4:1"));
+            table.RegisterMatch(mrb.ConstructMatch("Mexico - Croatia 3:1"));
 
             List<TeamInTable> results = table.GetCurrentTable().ToList();
 
@@ -48,5 +49,6 @@ namespace FootbalTableGenerator.Core.Tests
             Assert.That(results[3].FootbalTeamResultsSummary.Points == 0);
             Assert.That(results[3].FootbalTeamResultsSummary.GoalsScored == 1);
             Assert.That(results[3].FootbalTeamResultsSummary.GoalsLost == 9);
+        }
     }
 }

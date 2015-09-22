@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FootbalTableGenerator.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,14 @@ namespace FootballTableGenerator.ConsoleApp
     {
         static void Main(string[] args)
         {
+            Table table = new Table(new TeamResultsSummaryComparator());
+            MatchResultsBuilder mrb = new MatchResultsBuilder();
+            while (true)
+            {
+                string result = Console.ReadLine();
+                table.RegisterMatch(mrb.ConstructMatch(result));
+                Console.Write(table.ToString());
+            }
         }
     }
 }
