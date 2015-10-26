@@ -10,21 +10,10 @@ namespace FootbalTableGenerator.Core
     {
         private List<TeamResultsSummary> teamsResults  = new List<TeamResultsSummary>();
 
-        private readonly IComparer<TeamResultsSummary> teamComparator;
-        private readonly MatchBuilder matchBuilder;
-        private readonly MatchRegulations matchRegulations;
-
-        public Table()
-            :this(new MatchBuilder(), new TeamResultsSummaryComparator(), new MatchRegulations())
-        { }
-
-        public Table(MatchBuilder matchBuilder, IComparer<TeamResultsSummary> teamComparator,
-            MatchRegulations matchRegulations)
-        {
-            this.teamComparator = teamComparator;
-            this.matchBuilder = matchBuilder;
-            this.matchRegulations = matchRegulations;
-        }
+        private readonly IComparer<TeamResultsSummary> teamComparator = new TeamResultsSummaryComparator();
+        private readonly MatchBuilder matchBuilder = new MatchBuilder();
+        private readonly MatchRegulations matchRegulations = new MatchRegulations();
+        private readonly TableVisualizer tableVisualizer = new TableVisualizer();
 
         public void RegisterMatch(string matchString)
         {
@@ -36,18 +25,8 @@ namespace FootbalTableGenerator.Core
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            foreach (TeamInTable teamInTable in GetCurrentTable())
-            {
-                sb.AppendLine(String.Format("{0}. {1} {2} {3}:{4} {5}", 
-                    teamInTable.Position,
-                    teamInTable.FootbalTeamResultsSummary.Team.Name,
-                    teamInTable.FootbalTeamResultsSummary.Points,
-                    teamInTable.FootbalTeamResultsSummary.GoalsScored,
-                    teamInTable.FootbalTeamResultsSummary.GoalsLost,
-                    teamInTable.FootbalTeamResultsSummary.GoalDifference));
-            }
-            return sb.ToString().Trim();
+            IEnumerable<TeamInTable> teamsEnumeration = GetCurrentTable();
+            return tableVisualizer.Visualize(teamsEnumeration);
         }
 
         public IEnumerable<TeamInTable> GetCurrentTable()

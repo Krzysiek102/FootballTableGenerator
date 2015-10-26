@@ -44,6 +44,7 @@
     <Compile Include="MatchBuilder.cs" />
     <Compile Include="MatchRegulations.cs" />
     <Compile Include="Table.cs" />
+    <Compile Include="TableVisualizer.cs" />
     <Compile Include="Team.cs" />
     <Compile Include="TeamInTable.cs" />
     <Compile Include="TeamResultsSummary.cs" />
