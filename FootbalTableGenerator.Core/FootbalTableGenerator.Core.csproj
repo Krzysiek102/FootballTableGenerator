@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Match.cs" />
     <Compile Include="MatchBuilder.cs" />
+    <Compile Include="MatchRegulations.cs" />
     <Compile Include="Table.cs" />
     <Compile Include="Team.cs" />
     <Compile Include="TeamInTable.cs" />

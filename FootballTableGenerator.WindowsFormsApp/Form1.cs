@@ -19,7 +19,7 @@ namespace FootballTableGenerator.WindowsFormsApp
         public FootbalTableGenerator()
         {
             InitializeComponent();
-            table = new Table(new TeamResultsSummaryComparator());
+            table = new Table();
         }
 
         private void uxRegisterResult_Click(object sender, EventArgs e)

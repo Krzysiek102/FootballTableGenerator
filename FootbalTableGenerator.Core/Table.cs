@@ -8,31 +8,30 @@ namespace FootbalTableGenerator.Core
 {
     public class Table
     {
-        private List<TeamResultsSummary> teamsResults
-            = new List<TeamResultsSummary>();
+        private List<TeamResultsSummary> teamsResults  = new List<TeamResultsSummary>();
 
         private readonly IComparer<TeamResultsSummary> teamComparator;
-        MatchBuilder mrb = new MatchBuilder();
+        private readonly MatchBuilder matchBuilder;
+        private readonly MatchRegulations matchRegulations;
 
         public Table()
-            :this(new TeamResultsSummaryComparator())
+            :this(new MatchBuilder(), new TeamResultsSummaryComparator(), new MatchRegulations())
         { }
 
-        public Table(IComparer<TeamResultsSummary> teamComparator)
+        public Table(MatchBuilder matchBuilder, IComparer<TeamResultsSummary> teamComparator,
+            MatchRegulations matchRegulations)
         {
             this.teamComparator = teamComparator;
+            this.matchBuilder = matchBuilder;
+            this.matchRegulations = matchRegulations;
         }
-
-        public const int NumerOfPointForWin = 3;
-
-        public const int NumerOfPointForDraw = 1;
 
         public void RegisterMatch(string matchString)
         {
-            MatchResult match = mrb.ConstructMatch(matchString);
+            MatchResult match = matchBuilder.ConstructMatch(matchString);
             TeamResultsSummary host = GetTeamFromTeamsResults(match.HostTeam);
             TeamResultsSummary guest = GetTeamFromTeamsResults(match.GuestTeam);
-            AddPointsAddGoals(match, host, guest);
+            matchRegulations.AddPointsAndGoals(match, host, guest);
         }
 
         public override string ToString()
@@ -78,28 +77,6 @@ namespace FootbalTableGenerator.Core
                 teamsResults.Add(resultsSummary);
             };
             return resultsSummary;
-        }
-
-        private void AddPointsAddGoals(MatchResult match, TeamResultsSummary host, TeamResultsSummary guest)
-        {
-            if (match.NumberOfGoalsScoredByHosts > match.NumberOfGoalsScoredByGuests)
-            {
-                host.Points += NumerOfPointForWin;
-            }
-            else if (match.NumberOfGoalsScoredByHosts < match.NumberOfGoalsScoredByGuests)
-            {
-                guest.Points += NumerOfPointForWin;
-            }
-            else
-            {
-                host.Points += NumerOfPointForDraw;
-                guest.Points += NumerOfPointForDraw;
-            }
-            host.GoalsScored += match.NumberOfGoalsScoredByHosts;
-            host.GoalsLost += match.NumberOfGoalsScoredByGuests;
-
-            guest.GoalsScored += match.NumberOfGoalsScoredByGuests;
-            guest.GoalsLost += match.NumberOfGoalsScoredByHosts;
         }
     }
 }
