@@ -11,12 +11,11 @@ namespace FootballTableGenerator.ConsoleApp
     {
         static void Main(string[] args)
         {
-            Table table = new Table(new TeamResultsSummaryComparator());
-            MatchResultsBuilder mrb = new MatchResultsBuilder();
+            Table table = new Table();
             while (true)
             {
                 string result = Console.ReadLine();
-                table.RegisterMatch(mrb.ConstructMatch(result));
+                table.RegisterMatch(result);
                 Console.Write(table.ToString());
             }
         }

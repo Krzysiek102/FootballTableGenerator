@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Match.cs" />
-    <Compile Include="MatchResultsBuilder.cs" />
+    <Compile Include="MatchBuilder.cs" />
     <Compile Include="Table.cs" />
     <Compile Include="Team.cs" />
     <Compile Include="TeamInTable.cs" />

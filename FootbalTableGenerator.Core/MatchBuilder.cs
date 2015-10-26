@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FootbalTableGenerator.Core
 {
-    public class MatchResultsBuilder
+    public class MatchBuilder
     {
         private Regex matchStringFormat = new Regex(@"(\w+) - (\w+) (\d+):(\d+)");
 
@@ -27,7 +27,6 @@ namespace FootbalTableGenerator.Core
             {
                 throw new ArgumentException("Invalid match format");
             }
-
         }
     }
 }

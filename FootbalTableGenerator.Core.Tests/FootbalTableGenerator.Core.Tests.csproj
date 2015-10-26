@@ -44,10 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MatchTest.cs" />
+    <Compile Include="MatchBuilderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TableTests.cs" />
-    <Compile Include="TableTextVisualizerTests.cs" />
     <Compile Include="TeamResultsSummaryComparatorTests.cs" />
   </ItemGroup>
   <ItemGroup>

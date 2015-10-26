@@ -14,7 +14,7 @@ namespace FootballTableGenerator.WindowsFormsApp
     public partial class FootbalTableGenerator : Form
     {
         private Table table;
-        private MatchResultsBuilder mrb = new MatchResultsBuilder();
+        private MatchBuilder mrb = new MatchBuilder();
 
         public FootbalTableGenerator()
         {
@@ -25,7 +25,7 @@ namespace FootballTableGenerator.WindowsFormsApp
         private void uxRegisterResult_Click(object sender, EventArgs e)
         {
             string result = uxInputResult.Text;
-            table.RegisterMatch(mrb.ConstructMatch(result));
+            table.RegisterMatch(result);
             uxTable.Text = table.ToString();
         }
     }

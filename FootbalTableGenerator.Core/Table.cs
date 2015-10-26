@@ -12,7 +12,11 @@ namespace FootbalTableGenerator.Core
             = new List<TeamResultsSummary>();
 
         private readonly IComparer<TeamResultsSummary> teamComparator;
+        MatchBuilder mrb = new MatchBuilder();
 
+        public Table()
+            :this(new TeamResultsSummaryComparator())
+        { }
 
         public Table(IComparer<TeamResultsSummary> teamComparator)
         {
@@ -23,8 +27,9 @@ namespace FootbalTableGenerator.Core
 
         public const int NumerOfPointForDraw = 1;
 
-        public void RegisterMatch(MatchResult match)
+        public void RegisterMatch(string matchString)
         {
+            MatchResult match = mrb.ConstructMatch(matchString);
             TeamResultsSummary host = GetTeamFromTeamsResults(match.HostTeam);
             TeamResultsSummary guest = GetTeamFromTeamsResults(match.GuestTeam);
             AddPointsAddGoals(match, host, guest);
@@ -43,7 +48,7 @@ namespace FootbalTableGenerator.Core
                     teamInTable.FootbalTeamResultsSummary.GoalsLost,
                     teamInTable.FootbalTeamResultsSummary.GoalDifference));
             }
-            return sb.ToString();
+            return sb.ToString().Trim();
         }
 
         public IEnumerable<TeamInTable> GetCurrentTable()
