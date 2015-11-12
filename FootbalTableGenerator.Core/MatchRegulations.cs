@@ -11,26 +11,26 @@ namespace FootbalTableGenerator.Core
         public const int NumerOfPointForWin = 3;
         public const int NumerOfPointForDraw = 1;
 
-        public void AddPointsAndGoals(FootbalMatch match, TeamResultsSummary host, TeamResultsSummary guest)
+        public void AddPointsAndGoals(FootbalMatch match, TeamResultsSummary hostResults, TeamResultsSummary guestResults)
         {
             if (match.NumberOfGoalsScoredByHosts > match.NumberOfGoalsScoredByGuests)
             {
-                host.Points += NumerOfPointForWin;
+                hostResults.Points += NumerOfPointForWin;
             }
             else if (match.NumberOfGoalsScoredByHosts < match.NumberOfGoalsScoredByGuests)
             {
-                guest.Points += NumerOfPointForWin;
+                guestResults.Points += NumerOfPointForWin;
             }
             else
             {
-                host.Points += NumerOfPointForDraw;
-                guest.Points += NumerOfPointForDraw;
+                hostResults.Points += NumerOfPointForDraw;
+                guestResults.Points += NumerOfPointForDraw;
             }
-            host.GoalsScored += match.NumberOfGoalsScoredByHosts;
-            host.GoalsLost += match.NumberOfGoalsScoredByGuests;
+            hostResults.GoalsScored += match.NumberOfGoalsScoredByHosts;
+            hostResults.GoalsLost += match.NumberOfGoalsScoredByGuests;
 
-            guest.GoalsScored += match.NumberOfGoalsScoredByGuests;
-            guest.GoalsLost += match.NumberOfGoalsScoredByHosts;
+            guestResults.GoalsScored += match.NumberOfGoalsScoredByGuests;
+            guestResults.GoalsLost += match.NumberOfGoalsScoredByHosts;
         }
     }
 }
