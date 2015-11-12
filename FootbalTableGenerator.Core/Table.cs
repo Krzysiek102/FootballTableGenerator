@@ -23,7 +23,7 @@ namespace FootbalTableGenerator.Core
             matchRegulations.AddPointsAndGoals(match, host, guest);
         }
 
-        public override string ToString()
+        public string Visualize()
         {
             IEnumerable<TeamInTable> teamsEnumeration = GetCurrentTable();
             return tableVisualizer.Visualize(teamsEnumeration);

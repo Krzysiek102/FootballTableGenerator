@@ -26,7 +26,7 @@ namespace FootballTableGenerator.WindowsFormsApp
         {
             string result = uxInputResult.Text;
             table.RegisterMatch(result);
-            uxTable.Text = table.ToString();
+            uxTable.Text = table.Visualize();
         }
     }
 }
