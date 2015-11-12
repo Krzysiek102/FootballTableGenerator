@@ -14,10 +14,10 @@ namespace FootbalTableGenerator.Core.Tests
         public void OneWordForTeamAnOneDigitForResultShouldGiveCorrectMatch()
         {
             MatchBuilder matchBuilder = new MatchBuilder();
-            MatchResult matchResult = matchBuilder.ConstructMatch("Poland - Germany 2:0");
+            FootbalMatch matchResult = matchBuilder.ConstructMatch("Poland - Germany 2:0");
 
-            Assert.AreEqual(matchResult.HostTeam.Name, "Poland");
-            Assert.AreEqual(matchResult.GuestTeam.Name, "Germany");
+            Assert.AreEqual(matchResult.HostTeam, "Poland");
+            Assert.AreEqual(matchResult.GuestTeam, "Germany");
             Assert.AreEqual(matchResult.NumberOfGoalsScoredByHosts, 2);
             Assert.AreEqual(matchResult.NumberOfGoalsScoredByGuests, 0);
         }

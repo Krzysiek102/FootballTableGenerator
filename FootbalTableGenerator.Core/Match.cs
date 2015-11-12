@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace FootbalTableGenerator.Core
 {
-    public class MatchResult
+    public class FootbalMatch
     {
-        public Team HostTeam { get; set; }
-        public Team GuestTeam { get; set; }
+        public string HostTeam { get; set; }
+        public string GuestTeam { get; set; }
         public byte NumberOfGoalsScoredByHosts { get; set; }
         public byte NumberOfGoalsScoredByGuests { get; set; }
     }

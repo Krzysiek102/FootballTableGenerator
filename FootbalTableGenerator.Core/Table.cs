@@ -17,7 +17,7 @@ namespace FootbalTableGenerator.Core
 
         public void RegisterMatch(string matchString)
         {
-            MatchResult match = matchBuilder.ConstructMatch(matchString);
+            FootbalMatch match = matchBuilder.ConstructMatch(matchString);
             TeamResultsSummary host = GetTeamFromTeamsResults(match.HostTeam);
             TeamResultsSummary guest = GetTeamFromTeamsResults(match.GuestTeam);
             matchRegulations.AddPointsAndGoals(match, host, guest);
@@ -46,9 +46,9 @@ namespace FootbalTableGenerator.Core
             return table;
         }
 
-        private TeamResultsSummary GetTeamFromTeamsResults(Team team)
+        private TeamResultsSummary GetTeamFromTeamsResults(string team)
         {
-            TeamResultsSummary resultsSummary = teamsResults.Find(tr => tr.Team.Name == team.Name);
+            TeamResultsSummary resultsSummary = teamsResults.Find(tr => tr.Team == team);
             if (resultsSummary == null)
             {
                 resultsSummary = new TeamResultsSummary();

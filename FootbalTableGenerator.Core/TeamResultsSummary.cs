@@ -9,7 +9,7 @@ namespace FootbalTableGenerator.Core
 {
     public class TeamResultsSummary
     {
-        public Team Team { get; set; }
+        public string Team { get; set; }
         public uint Points { get; set; }
         public uint GoalsScored { get; set; }
         public uint GoalsLost { get; set; }
