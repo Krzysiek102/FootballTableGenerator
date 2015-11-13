@@ -47,6 +47,7 @@
     <Compile Include="MatchBuilderTests.cs" />
     <Compile Include="MatchRegulationsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeamResultsSummarySorterTests.cs" />
     <Compile Include="TableTests.cs" />
     <Compile Include="TableVisualizerTests.cs" />
     <Compile Include="TeamResultsSummaryComparatorTests.cs" />
