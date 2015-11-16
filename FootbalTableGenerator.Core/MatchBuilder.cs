@@ -11,12 +11,12 @@ namespace FootbalTableGenerator.Core
     {
         private Regex matchStringFormat = new Regex(@"(\w+) - (\w+) (\d+):(\d+)");
 
-        public FootbalMatch ConstructMatch(string matchInput)
+        public FootballMatch ConstructMatch(string matchInput)
         {
             Match match = matchStringFormat.Match(matchInput);
             if (match.Success)
             {
-                FootbalMatch machResult = new FootbalMatch();
+                FootballMatch machResult = new FootballMatch();
                 machResult.HostTeam = match.Groups[1].Value;
                 machResult.GuestTeam = match.Groups[2].Value;
                 machResult.NumberOfGoalsScoredByHosts = Byte.Parse(match.Groups[3].Value);

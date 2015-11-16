@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FootbalTableGenerator.Core
 {
-    public class FootbalMatch
+    public class FootballMatch
     {
         public string HostTeam { get; set; }
         public string GuestTeam { get; set; }

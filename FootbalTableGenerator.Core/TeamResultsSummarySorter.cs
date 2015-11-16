@@ -14,7 +14,7 @@ namespace FootbalTableGenerator.Core
         {
             teamsResults.Sort(teamComparator);
             teamsResults.Reverse();
-            uint currentPosition = 1;
+            int currentPosition = 1;
             List<TeamInTable> table = new List<TeamInTable>();
             foreach (TeamResultsSummary teamResultsSummary in teamsResults)
             {

@@ -14,7 +14,7 @@ namespace FootbalTableGenerator.Core.Tests
         public void OneWordForTeamAnOneDigitForResultShouldGiveCorrectMatch()
         {
             MatchBuilder matchBuilder = new MatchBuilder();
-            FootbalMatch matchResult = matchBuilder.ConstructMatch("Poland - Germany 2:0");
+            FootballMatch matchResult = matchBuilder.ConstructMatch("Poland - Germany 2:0");
 
             Assert.AreEqual(matchResult.HostTeam, "Poland");
             Assert.AreEqual(matchResult.GuestTeam, "Germany");

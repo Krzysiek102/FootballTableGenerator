@@ -11,7 +11,7 @@ namespace FootbalTableGenerator.Core
         public const int NumerOfPointForWin = 3;
         public const int NumerOfPointForDraw = 1;
 
-        public void AddPointsAndGoals(FootbalMatch match, TeamResultsSummary hostResults, TeamResultsSummary guestResults)
+        public void AddPointsAndGoals(FootballMatch match, TeamResultsSummary hostResults, TeamResultsSummary guestResults)
         {
             if (match.NumberOfGoalsScoredByHosts > match.NumberOfGoalsScoredByGuests)
             {

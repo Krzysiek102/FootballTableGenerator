@@ -8,7 +8,7 @@ namespace FootbalTableGenerator.Core
 {
     public class TeamInTable
     {
-        public uint Position { get; set; }
+        public int Position { get; set; }
         public TeamResultsSummary FootballTeamResultsSummary { get; set; }
     }
 }

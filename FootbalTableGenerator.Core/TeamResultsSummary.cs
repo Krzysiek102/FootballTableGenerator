@@ -10,9 +10,9 @@ namespace FootbalTableGenerator.Core
     public class TeamResultsSummary
     {
         public string Team { get; set; }
-        public uint Points { get; set; }
-        public uint GoalsScored { get; set; }
-        public uint GoalsLost { get; set; }
+        public int Points { get; set; }
+        public int GoalsScored { get; set; }
+        public int GoalsLost { get; set; }
 
         public TeamResultsSummary()
         {
@@ -23,7 +23,7 @@ namespace FootbalTableGenerator.Core
 
         public int GoalDifference
         {
-            get { return (int) (GoalsScored - GoalsLost); }
+            get { return GoalsScored - GoalsLost; }
         }
     }
 }

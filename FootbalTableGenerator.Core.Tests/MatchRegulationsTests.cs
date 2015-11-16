@@ -13,24 +13,40 @@ namespace FootbalTableGenerator.Core.Tests
         [Test]
         public void HostsWin()
         {
-            //Arrange
+            //Arrnage
             MatchRegulations matchRegulations = new MatchRegulations();
-            MatchBuilder matchBuilder = new MatchBuilder();
-            FootbalMatch match = matchBuilder.ConstructMatch("Poland - Germany 2:0");
-            TeamResultsSummary hostResults = new TeamResultsSummary();
-            TeamResultsSummary guestResults = new TeamResultsSummary();
+            FootballMatch match = new FootballMatch()
+            {
+                HostTeam = "Poland",
+                GuestTeam = "Germany",
+                NumberOfGoalsScoredByHosts = 2,
+                NumberOfGoalsScoredByGuests = 0
+            };
+            TeamResultsSummary hostTeam = new TeamResultsSummary()
+            {
+                Team = "Poland",
+                GoalsLost = 0,
+                GoalsScored = 0,
+                Points = 0
+            };
+            TeamResultsSummary guestTeam = new TeamResultsSummary()
+            {
+                Team = "Germany",
+                GoalsLost = 0,
+                GoalsScored = 0,
+                Points = 0
+            };
 
             //Act
-            matchRegulations.AddPointsAndGoals(match, hostResults, guestResults);
+            matchRegulations.AddPointsAndGoals(match, hostTeam, guestTeam);
 
-            //Assert
-            Assert.That(hostResults.Points == 3);
-            Assert.That(hostResults.GoalsScored == 2);
-            Assert.That(hostResults.GoalsLost == 0);
+            Assert.That(hostTeam.Points == 3);
+            Assert.That(hostTeam.GoalsScored == 2);
+            Assert.That(hostTeam.GoalsLost == 0);
 
-            Assert.That(guestResults.Points == 0);
-            Assert.That(guestResults.GoalsScored == 0);
-            Assert.That(guestResults.GoalsLost == 2);
+            Assert.That(guestTeam.Points == 0);
+            Assert.That(guestTeam.GoalsScored == 0);
+            Assert.That(guestTeam.GoalsLost == 2);
         }
     }
 }

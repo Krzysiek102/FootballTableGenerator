@@ -17,7 +17,7 @@ namespace FootbalTableGenerator.Core
 
         public void RegisterMatch(string matchString)
         {
-            FootbalMatch match = matchBuilder.ConstructMatch(matchString);
+            FootballMatch match = matchBuilder.ConstructMatch(matchString);
             TeamResultsSummary hostResults = GetTeamResultsByTeamName(match.HostTeam);
             TeamResultsSummary guestResults = GetTeamResultsByTeamName(match.GuestTeam);
             matchRegulations.AddPointsAndGoals(match, hostResults, guestResults);
