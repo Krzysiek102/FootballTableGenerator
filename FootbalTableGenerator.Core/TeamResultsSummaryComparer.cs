@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FootbalTableGenerator.Core
 {
-    public class TeamResultsSummaryComparator : IComparer<TeamResultsSummary>
+    public class TeamResultsSummaryComparer : IComparer<TeamResultsSummary>
     {
         public int Compare(TeamResultsSummary teamX, TeamResultsSummary teamY)
         {

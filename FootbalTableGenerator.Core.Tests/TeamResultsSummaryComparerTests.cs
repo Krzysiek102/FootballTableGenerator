@@ -8,21 +8,19 @@ using System.Threading.Tasks;
 namespace FootbalTableGenerator.Core.Tests
 {
     [TestFixture]
-    public class TeamResultsSummaryComparatorTests
+    public class TeamResultsSummaryComparerTests
     {
         [Test]
         public void TeamWithLargerNumberOfPointsShouldBeGreater()
         {
             //Arrane
-            TeamResultsSummary team1 = new TeamResultsSummary();
-            TeamResultsSummary team2 = new TeamResultsSummary();
-            TeamResultsSummaryComparator comparator = new TeamResultsSummaryComparator();
+            TeamResultsSummaryComparer comparer = new TeamResultsSummaryComparer();
 
-            team1.Points = 3;
-            team2.Points = 0;
+            TeamResultsSummary team1 = new TeamResultsSummary() { Points = 3 };
+            TeamResultsSummary team2 = new TeamResultsSummary() { Points = 0 };
 
             //Act
-            int comparisonResult = comparator.Compare(team1, team2);
+            int comparisonResult = comparer.Compare(team1, team2);
 
             //Assert
             Assert.AreEqual(1, comparisonResult);

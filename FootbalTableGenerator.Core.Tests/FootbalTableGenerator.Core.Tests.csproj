@@ -50,7 +50,7 @@
     <Compile Include="TeamResultsSummarySorterTests.cs" />
     <Compile Include="TableTests.cs" />
     <Compile Include="TableVisualizerTests.cs" />
-    <Compile Include="TeamResultsSummaryComparatorTests.cs" />
+    <Compile Include="TeamResultsSummaryComparerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FootbalTableGenerator.Core\FootbalTableGenerator.Core.csproj">

@@ -8,7 +8,7 @@ namespace FootbalTableGenerator.Core
 {
     public class TeamResultsSummarySorter
     {
-        private readonly IComparer<TeamResultsSummary> teamComparator = new TeamResultsSummaryComparator();
+        private readonly IComparer<TeamResultsSummary> teamComparator = new TeamResultsSummaryComparer();
 
         public IEnumerable<TeamInTable> Sort(List<TeamResultsSummary> teamsResults)
         {

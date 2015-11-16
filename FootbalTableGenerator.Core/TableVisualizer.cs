@@ -8,10 +8,10 @@ namespace FootbalTableGenerator.Core
 {
     public class TableVisualizer
     {
-        public string Visualize(IEnumerable<TeamInTable> table)
+        public string Visualize(IEnumerable<TeamInTable> teamsInTable)
         {
             StringBuilder sb = new StringBuilder();
-            foreach (TeamInTable teamInTable in table)
+            foreach (TeamInTable teamInTable in teamsInTable)
             {
                 sb.AppendLine(String.Format("{0}. {1} {2} {3}:{4} {5}",
                     teamInTable.Position,

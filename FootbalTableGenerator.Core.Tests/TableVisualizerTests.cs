@@ -42,13 +42,13 @@ namespace FootbalTableGenerator.Core.Tests
 
             //Act
             TableVisualizer tableVisualiser = new TableVisualizer();
-            string visualisedTable = tableVisualiser.Visualize(teamsInTable);
+            string visualizedTable = tableVisualiser.Visualize(teamsInTable);
 
             string expectedTable =
 @"1. Poland 3 2:0 2
 2. Germany 0 0:2 -2";
 
-            Assert.That(visualisedTable == expectedTable);
+            Assert.That(visualizedTable == expectedTable);
         }
     }
 }
