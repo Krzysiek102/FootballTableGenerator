@@ -47,8 +47,8 @@ namespace FootbalTableGenerator.Core.Tests
 
             Assert.That(sortedTeamResultsList[0].Position == 1);
             Assert.That(sortedTeamResultsList[1].Position == 2);
-            Assert.That(sortedTeamResultsList[0].FootbalTeamResultsSummary == polandSummary);
-            Assert.That(sortedTeamResultsList[1].FootbalTeamResultsSummary == germanySummary);
+            Assert.That(sortedTeamResultsList[0].FootballTeamResultsSummary == polandSummary);
+            Assert.That(sortedTeamResultsList[1].FootballTeamResultsSummary == germanySummary);
         }
     }
 }

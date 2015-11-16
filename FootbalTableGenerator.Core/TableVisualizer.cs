@@ -15,11 +15,11 @@ namespace FootbalTableGenerator.Core
             {
                 sb.AppendLine(String.Format("{0}. {1} {2} {3}:{4} {5}",
                     teamInTable.Position,
-                    teamInTable.FootbalTeamResultsSummary.Team,
-                    teamInTable.FootbalTeamResultsSummary.Points,
-                    teamInTable.FootbalTeamResultsSummary.GoalsScored,
-                    teamInTable.FootbalTeamResultsSummary.GoalsLost,
-                    teamInTable.FootbalTeamResultsSummary.GoalDifference));
+                    teamInTable.FootballTeamResultsSummary.Team,
+                    teamInTable.FootballTeamResultsSummary.Points,
+                    teamInTable.FootballTeamResultsSummary.GoalsScored,
+                    teamInTable.FootballTeamResultsSummary.GoalsLost,
+                    teamInTable.FootballTeamResultsSummary.GoalDifference));
             }
             return sb.ToString().Trim();
         }

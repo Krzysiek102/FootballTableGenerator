@@ -9,6 +9,6 @@ namespace FootbalTableGenerator.Core
     public class TeamInTable
     {
         public uint Position { get; set; }
-        public TeamResultsSummary FootbalTeamResultsSummary { get; set; }
+        public TeamResultsSummary FootballTeamResultsSummary { get; set; }
     }
 }

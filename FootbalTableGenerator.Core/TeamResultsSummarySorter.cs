@@ -19,7 +19,7 @@ namespace FootbalTableGenerator.Core
             foreach (TeamResultsSummary teamResultsSummary in teamsResults)
             {
                 TeamInTable teamInTable = new TeamInTable();
-                teamInTable.FootbalTeamResultsSummary = teamResultsSummary;
+                teamInTable.FootballTeamResultsSummary = teamResultsSummary;
                 teamInTable.Position = currentPosition;
                 table.Add(teamInTable);
                 currentPosition++;
