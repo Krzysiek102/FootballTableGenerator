@@ -10,10 +10,10 @@ namespace FootbalTableGenerator.Core
     {
         private List<TeamResultsSummary> teamsResults  = new List<TeamResultsSummary>();
 
-        private readonly IComparer<TeamResultsSummary> teamComparator = new TeamResultsSummaryComparator();
         private readonly MatchBuilder matchBuilder = new MatchBuilder();
         private readonly MatchRegulations matchRegulations = new MatchRegulations();
         private readonly TableVisualizer tableVisualizer = new TableVisualizer();
+        private readonly TeamResultsSummarySorter teamResultsSummarySorter = new TeamResultsSummarySorter();
 
         public void RegisterMatch(string matchString)
         {
@@ -25,25 +25,8 @@ namespace FootbalTableGenerator.Core
 
         public string Visualize()
         {
-            IEnumerable<TeamInTable> teamsEnumeration = GetCurrentTable();
+            IEnumerable<TeamInTable> teamsEnumeration = teamResultsSummarySorter.Sort(teamsResults);
             return tableVisualizer.Visualize(teamsEnumeration);
-        }
-
-        private IEnumerable<TeamInTable> GetCurrentTable()
-        {
-            teamsResults.Sort(teamComparator);
-            teamsResults.Reverse();
-            uint currentPosition = 1;
-            List<TeamInTable> table = new List<TeamInTable>();
-            foreach (TeamResultsSummary teamResultsSummary in teamsResults)
-            {
-                TeamInTable teamInTable = new TeamInTable();
-                teamInTable.FootbalTeamResultsSummary = teamResultsSummary;
-                teamInTable.Position = currentPosition;
-                table.Add(teamInTable);
-                currentPosition++;
-            }
-            return table;
         }
 
         private TeamResultsSummary GetTeamResultsByTeamName(string team)
