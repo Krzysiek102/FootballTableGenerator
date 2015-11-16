@@ -17,6 +17,7 @@ namespace FootballTableGenerator.ConsoleApp
                 string result = Console.ReadLine();
                 table.RegisterMatch(result);
                 Console.Write(table.Visualize());
+                Console.WriteLine();
             }
         }
     }

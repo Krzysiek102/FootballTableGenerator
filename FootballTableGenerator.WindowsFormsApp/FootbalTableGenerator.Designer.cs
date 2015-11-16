@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uxInputResult = new System.Windows.Forms.TextBox();
+            this.tbInputResult = new System.Windows.Forms.TextBox();
             this.uxRegisterResult = new System.Windows.Forms.Button();
-            this.uxTable = new System.Windows.Forms.TextBox();
+            this.tbTable = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // uxInputResult
             // 
-            this.uxInputResult.Location = new System.Drawing.Point(13, 13);
-            this.uxInputResult.Name = "uxInputResult";
-            this.uxInputResult.Size = new System.Drawing.Size(415, 20);
-            this.uxInputResult.TabIndex = 0;
+            this.tbInputResult.Location = new System.Drawing.Point(13, 13);
+            this.tbInputResult.Name = "uxInputResult";
+            this.tbInputResult.Size = new System.Drawing.Size(415, 20);
+            this.tbInputResult.TabIndex = 0;
             // 
             // uxRegisterResult
             // 
@@ -52,20 +52,20 @@
             // 
             // uxTable
             // 
-            this.uxTable.Location = new System.Drawing.Point(16, 91);
-            this.uxTable.Multiline = true;
-            this.uxTable.Name = "uxTable";
-            this.uxTable.Size = new System.Drawing.Size(567, 326);
-            this.uxTable.TabIndex = 2;
+            this.tbTable.Location = new System.Drawing.Point(16, 91);
+            this.tbTable.Multiline = true;
+            this.tbTable.Name = "uxTable";
+            this.tbTable.Size = new System.Drawing.Size(567, 326);
+            this.tbTable.TabIndex = 2;
             // 
             // FootbalTableGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(595, 429);
-            this.Controls.Add(this.uxTable);
+            this.Controls.Add(this.tbTable);
             this.Controls.Add(this.uxRegisterResult);
-            this.Controls.Add(this.uxInputResult);
+            this.Controls.Add(this.tbInputResult);
             this.Name = "FootbalTableGenerator";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -75,9 +75,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox uxInputResult;
+        private System.Windows.Forms.TextBox tbInputResult;
         private System.Windows.Forms.Button uxRegisterResult;
-        private System.Windows.Forms.TextBox uxTable;
+        private System.Windows.Forms.TextBox tbTable;
     }
 }
 

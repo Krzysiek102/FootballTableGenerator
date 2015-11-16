@@ -13,20 +13,18 @@ namespace FootballTableGenerator.WindowsFormsApp
 {
     public partial class FootbalTableGenerator : Form
     {
-        private Table table;
-        private MatchBuilder mrb = new MatchBuilder();
+        private Table table = new Table();
 
         public FootbalTableGenerator()
         {
             InitializeComponent();
-            table = new Table();
         }
 
         private void uxRegisterResult_Click(object sender, EventArgs e)
         {
-            string result = uxInputResult.Text;
+            string result = tbInputResult.Text;
             table.RegisterMatch(result);
-            uxTable.Text = table.Visualize();
+            tbTable.Text = table.Visualize();
         }
     }
 }
